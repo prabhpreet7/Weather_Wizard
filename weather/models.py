@@ -7,6 +7,5 @@ class City(models.Model):
         return self.name
 
     class Meta:
-
         verbose_name_plural='cities'
 # Create your models here.

@@ -15,6 +15,23 @@
             <div class="container">
                 <h1 class="title">
                     Welcome to Weather Wizard
+                  <!-- <a href='#'>  <input type="button" value="History" style="float: right; color:Black"> -->
+                  <div class="control">
+                    <a href="{% url 'history' %}">
+                    <button type='submit' class="button is-info" style="float: right;background-color: #c7ccab;">
+                          History
+                    </button>
+                    </a>
+                  </div>
+                  <!-- <br><br> -->
+                  <div class="control">
+                    <a href="{% url 'home' %}">
+                    <button type='submit' class="button is-info" style="float: left;background-color: #c7ccab;">
+                          Home
+                    </button>
+                    </a>
+                  </div>
+                </a>
                 </h1>
             </div>
         </div>
@@ -32,14 +49,17 @@
                             </div>
                             <div class="control">
                                 <button type='submit' class="button is-info">
-                                    Add City
+                                    View
                                 </button>
                             </div>
+
                         </div>
+
                       {% if message %}
                       <div class='notification {{message_class}}'>{{ message }}</div>
                      {% endif %}
                     </form>
+
                 </div>
             </div>
         </div>
