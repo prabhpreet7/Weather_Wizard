@@ -23,14 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4bcan@f9viwcrj^kky_z1df11gfe#a6-s-y!gkj85@wcj_lrf2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['prabhpreet7.pythonanywhere.com']
+ALLOWED_HOSTS = []#'prabhpreet7.pythonanywhere.com'
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'weather',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -75,10 +76,15 @@ WSGI_APPLICATION = 'weather_wizard.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    # 'default': {
+    #     'ENGINE': 'djongo',
+    #     'NAME':'weather_wizard',
+    # }
 }
 
 
@@ -119,3 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
